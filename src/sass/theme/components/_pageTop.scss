@@ -32,18 +32,24 @@ a.al-logo {
   float: right;
   min-width: 230px;
   margin-top: 10px;
+  .user-profile__container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    .al-user-profile, .al-lang-center {
+      width: 50%;  
+    }
+  }
 }
 
 .al-user-profile {
-  float: right;
   margin-right: 12px;
   transition: all .15s ease-in-out;
   padding: 0;
-  width: 36px;
-  height: 36px;
   border: 0;
   opacity: 1;
   position: relative;
+  display: block;
   a {
     display: block;
   }
@@ -51,6 +57,15 @@ a.al-logo {
     width: 45px;
     height: 45px;
     border-radius: 50%;
+  }
+  .al-user-profile__show {
+    display: flex;
+    align-items: center;
+    h6 {
+      color: #fff;
+      text-align: right;
+      padding-right: 15px;
+    }
   }
 }
 
