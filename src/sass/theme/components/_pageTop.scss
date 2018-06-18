@@ -22,6 +22,8 @@ a.al-logo {
   float: left;
   outline: none !important;
   line-height: 60px;
+  text-transform: uppercase !important;
+  font-weight: 700;
 
   span {
     color: $primary;
@@ -30,7 +32,7 @@ a.al-logo {
 
 .user-profile {
   float: right;
-  min-width: 230px;
+  min-width: 260px;
   margin-top: 10px;
   .user-profile__container {
     display: flex;
@@ -38,6 +40,19 @@ a.al-logo {
     align-items: center;
     .al-user-profile, .al-lang-center {
       width: 50%;  
+    }
+    .al-user-profile {
+      position: relative;
+      &::before {
+        content: '';
+        height: 70%;
+        width: 1px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        bottom: 10px;
+        background-color: #777;
+      }
     }
   }
 }
@@ -50,12 +65,20 @@ a.al-logo {
   opacity: 1;
   position: relative;
   display: block;
+
+  &::before {
+    height: 100%;
+    width: 1px;
+    float: left;
+    background-color: #777;
+  }
+
   a {
     display: block;
   }
   img {
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
   }
   .al-user-profile__show {
@@ -65,6 +88,7 @@ a.al-logo {
       color: #fff;
       text-align: right;
       padding-right: 15px;
+      margin-bottom: 0;
     }
   }
 }

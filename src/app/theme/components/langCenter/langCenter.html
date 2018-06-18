@@ -1,25 +1,18 @@
 <li uib-dropdown>
     <a href uib-dropdown-toggle>
         <span>Select Language</span>
-        <div class="notification-ring"></div>
+        <div class="current-lang"><img class="img-lang" ng-src="{{ curLang.image }}" /></div>
     </a>
 
-    <div uib-dropdown-menu class="top-dropdown-menu">
+    <div uib-dropdown-menu class="lang-dropdown-menu">
         <i class="dropdown-arr"></i>
-
-        <div class="header clearfix">
-            <strong>Notifications</strong>
-            <a href>Mark All as Read</a>
-            <a href>Settings</a>
-        </div>
-        <div class="msg-list">
-            <a href class="clearfix" ng-repeat="msg in notifications">
+        <div class="lang-list">
+            <a href class="clearfix" ng-repeat="lang in languages" ng-click="selectLanguage(lang)">
                 <div class="img-area">
-                    <img ng-class="{'photo-msg-item' : !msg.image}" ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}">
+                    <img ng-class="{'photo-msg-item' : !lang.image}" ng-src="{{ lang.image }}">
                 </div>
-                <div class="msg-area">
-                    <div ng-bind-html="getMessage(msg)"></div>
-                    <span>{{ msg.time }}</span>
+                <div class="text-area">
+                    <div ng-bind-html="getCurLang(lang)"></div>
                 </div>
             </a>
         </div>

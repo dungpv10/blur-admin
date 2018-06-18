@@ -9,26 +9,29 @@
         .controller('LangCenterCtrl', LangCenterCtrl);
   
     /** @ngInject */
-    function LangCenterCtrl($scope, $sce) {      
+    function LangCenterCtrl($scope, $sce) {     
   
       $scope.languages = [
         {
           langId: 0,
-          image: '',
+          image: 'assets/img/theme/icon/lang/vietnam-svg.png',
           text: 'Vietnamese'
         },
         {
             langId: 1,
-            image: '',
+            image: 'assets/img/theme/icon/lang/english-svg.png',
             text: 'English'
         }
       ];
-  
-      $scope.getMessage = function(msg) {
-        var text = msg.template;
-        if (msg.userId || msg.userId === 0) {
-          text = text.replace('&name', '<strong>' + $scope.users[msg.userId].name + '</strong>');
-        }
+
+      $scope.curLang = $scope.languages[0];
+      
+      $scope.selectLanguage = function (lang) {
+        $scope.curLang = lang;
+      }
+
+      $scope.getCurLang = function(lang) {
+        var text = lang.text;
         return $sce.trustAsHtml(text);
       };
     }
