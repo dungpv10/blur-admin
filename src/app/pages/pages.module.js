@@ -11,6 +11,7 @@
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.teamlead',
     'BlurAdmin.pages.convert',
+    'BlurAdmin.pages.setting',
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.components',
     'BlurAdmin.pages.form',
