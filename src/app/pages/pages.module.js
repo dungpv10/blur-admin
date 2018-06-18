@@ -13,6 +13,7 @@
     'BlurAdmin.pages.teamlead',
     'BlurAdmin.pages.convert',
     'BlurAdmin.pages.contact',
+    'BlurAdmin.pages.setting',
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.components',
     'BlurAdmin.pages.form',
