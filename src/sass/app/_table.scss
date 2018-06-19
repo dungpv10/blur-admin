@@ -1,3 +1,25 @@
 .table-panel {
   height: 295px;
 }
+
+.table {
+  > thead {
+    > tr {
+      th {
+        text-align: left !important;
+        padding-bottom: 0;
+      }
+    }
+    tr + tr {
+      td {
+        border-top: none;
+        padding-top: 0;
+      }
+    }
+    tr {
+      th, td {
+        background-color: rgba(243, 243, 243, 1);
+      }
+    }
+  }
+}
