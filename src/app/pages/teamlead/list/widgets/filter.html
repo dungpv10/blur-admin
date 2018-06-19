@@ -3,11 +3,7 @@
         <div class="col-md-2">
             <div class="form-group">
                 <label class="control-label" for="page_number">Number of rows per page</label>
-                <select class="form-control" id="page_number">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
+                <select class="form-control" id="page_number" ng-model="selectedPageSize" ng-options="opt.text for opt in sizes" ng-change="changePagesize()">
                 </select>
             </div>
         </div>
