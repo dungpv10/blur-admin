@@ -1,0 +1,36 @@
+<form class="">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="control-label" for="page_number">Rows on page</label>
+                <select class="form-control" id="page_number" ng-model="selectedPageSize" ng-options="opt.text for opt in sizes" ng-change="changePagesize()">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="control-label" for="page_number">Your order</label>
+                <select class="form-control" id="page_number" ng-model="selectedPageSize" ng-options="opt.text for opt in sizes" ng-change="changePagesize()">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label" for="display_columns">Display columns</label>
+                <select class="form-control" id="display_columns">
+                    <option>Full Name, Phone, Email, Source, Load CV, Người chấm</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label" for="quick_search">Quick Search</label>
+                <input type="text" class="form-control" id="quick_search" placeholder="Any Keyword">
+            </div>
+        </div>
+    </div>
+</form>
