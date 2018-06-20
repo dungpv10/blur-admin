@@ -9,193 +9,38 @@
         $scope.selectedPageSize = {};
         $scope.pageSize = 5;
         $scope.assignLabel = 'Người chấm';
-    
-        $scope.listInterview = [
-            {
-              id: 1,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            },
-            {
-              id: 2,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            },
-            {
-              id: 3,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            },
-            {
-              id: 4,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            },
-            {
-              id: 5,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            },
-            {
-              id: 6,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }, 
-            {
-              id: 7,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , {
-              id: 8,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , 
-            {
-              id: 9,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , 
-            {
-              id: 10,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , {
-              id: 11,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , {
-              id: 12,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-            , {
-              id: 13,
-              searchDate: '06/07/2018',
-              fullName: 'Tran Tuan Anh',
-              email: 'trantuananh@gmail.com',
-              telephone: '094123456',
-              linkCV: 'http://drive.google.com/trantuananh.cv',
-              source: 'http://drive.google.com/trantuananh.cv',
-              interviewDate: '10/08/2019',
-              note: 'No note',
-              informer: 'huynq09',
-              interviewer: 'phuongnt14',
-              result: 1
-            }
-          ];
+
+        $scope.dt = new Date();
+        $scope.open = open;
+        $scope.opened = false;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.options = {
+            showWeeks: false
+        };
+
+        function open() {
+            $scope.opened = !$scope.opened;
+        }
+
+        $scope.listInterview = [];
+
+        for (var i = 0; i < 28; ++i) {
+          $scope.listInterview.push({
+            id: i,
+            searchDate: '06/07/2018',
+            fullName: 'Tran Tuan Anh',
+            email: 'trantuananh@gmail.com',
+            telephone: '094123456',
+            linkCV: 'http://drive.google.com/trantuananh.cv',
+            source: 'http://drive.google.com/trantuananh.cv',
+            interviewDate: '10/08/2019',
+            note: 'No note',
+            informer: 'huynq09',
+            interviewer: 'phuongnt14',
+            result: 1
+          });
+        }
     
         $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
         $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
