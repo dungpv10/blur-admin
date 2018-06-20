@@ -1,89 +1,92 @@
+<div ng-include="'app/pages/teamlead/assignPeople/widgets/filter.html'"></div>
 <div class="widgets">
-    <div ng-include="'app/pages/teamlead/assignConvert/widgets/filter.html'"></div>
-    <div class="row">
-        <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
-            <table class="table table-hover" st-table="listAssignPeople">
-                <thead>
-                    <tr>
-                        <th>Action</th>
-                        <th>Order code</th>
-                        <th>Order name</th>
-                        <th>Teamlead</th>
-                        <th>KPI</th>
-                        <th>Deadline</th>
-                        <th>Converter</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" id="checkAll" value="">
-                                <span>&nbsp;</span>
-                            </label>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search Summary</option>
-                                <option value="code">Code 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search Order name</option>
-                                <option value="name">Name 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Teamlead</option>
-                                <option value="001">huongtt25</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search KPI</option>
-                                <option value="001">kpi 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>dd/MM/yy</option>
-                                <option value="001">19/06/2018</option>
-                                <option value="001">20/06/2018</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search người đề xuất</option>
-                                <option value="001">phuongnt15</option>
-                                <option value="001">phuongnt15</option>
-                            </select>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in listAssignPeople track by item.id">
-                        <td>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" id="chk_{{ item.id }}" value="">
-                                <span>&nbsp;</span>
-                            </label>
-                        </td>
-                        <td>{{ item.fullName }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>
-                            <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
-                        </td>
-                        <td>{{ item.status == 0 ? 'New' : 'Complete' }}</td>
-                        <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
-                        <td>{{ item.proposer }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="7" class="text-center">
-                            <div st-pagination="" st-items-by-page="selectedPageSize" st-displayed-pages="5"></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="wid-content">
+        <div class="row">
+            <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
+                <table class="table table-hover" st-table="listConverter">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Order code</th>
+                            <th>Order name</th>
+                            <th>Teamlead</th>
+                            <th>KPI</th>
+                            <th>Deadline</th>
+                            <th>Người đề xuất</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="checkAll" value="">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Search Summary</option>
+                                    <option value="code">Code 001</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Search Order name</option>
+                                    <option value="name">Name 001</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Teamlead</option>
+                                    <option value="001">huongtt25</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Search KPI</option>
+                                    <option value="001">kpi 001</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>dd/MM/yy</option>
+                                    <option value="001">19/06/2018</option>
+                                    <option value="001">20/06/2018</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Search người đề xuất</option>
+                                    <option value="001">phuongnt15</option>
+                                    <option value="001">phuongnt15</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in listConverter track by item.id">
+                            <td>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="chk_{{ item.id }}" value="">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </td>
+                            <td>{{ item.fullName }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>
+                                <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
+                            </td>
+                            <td>{{ item.status == 0 ? 'New' : 'Complete' }}</td>
+                            <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
+                            <td>{{ item.proposer }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="align-center">
+                                <div st-pagination="" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <div ng-include="'app/pages/teamlead/widgets/footer.html'"></div>
 </div>

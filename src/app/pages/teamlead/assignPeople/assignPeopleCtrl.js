@@ -8,6 +8,7 @@
   function AssignPeopleCtrl($scope, teamleadService) {
     $scope.selectedPageSize = {};
     $scope.pageSize = 5;
+    $scope.assignLabel = 'Người chấm';
 
     $scope.listAssignPeople = [
       {

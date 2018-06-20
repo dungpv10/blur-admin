@@ -145,7 +145,8 @@ a {
 }
 
 .al-content {
-  padding: 8px 32px 8px 40px;
+  // padding: 8px 32px 8px 40px;
+  padding: 8px 0;
 }
 
 @media screen and (max-width: $resXS) {
@@ -221,4 +222,37 @@ a {
 
 .irs-grid-text {
   color: $default-text;
+}
+
+.st-filter {
+  background-color: $bg-white;
+  padding: 0 30px;
+  margin-bottom: 10px;
+}
+
+.widgets {
+  .wid-content, .wid-footer {
+    padding: 8px 30px;
+  }
+
+  .wid-footer {
+    text-align: right;
+    .wid-footer__container {
+      float: right;
+      width: 40%;
+      display: flex;
+      align-content: center;
+      align-items: center;
+
+      label, input, button {
+        margin-left: 10px;
+      }
+
+      input {
+        &.form-control {
+          width: 50%;
+        }
+      }
+    }
+  }
 }

@@ -1,67 +1,121 @@
+<div ng-include="'app/pages/convert/interview/widgets/filter.html'"></div>
 <div class="widgets">
-
-  <div class="row">
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Standard Fields"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/standardFields.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Tags Input"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/tagsInput/tagsInput.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Input Groups"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/inputGroups.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Checkboxes & Radios"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/checkboxesRadios.html'"></div>
-      </div>
-
-      <div ba-panel ba-panel-title="On/Off Switches" ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/switches/switch.html'"></div>
-      </div>
-
-      <div ba-panel ba-panel-title="Old On/Off Switches (Deprecated)" ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/oldSwitches/switch.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Datepicker"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/datePickers/datePickers.html'"></div>
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Validation States"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/validationStates.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Selects"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/select/select.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Old selects(deprecated)"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/oldSelect/select.html'"></div>
+  <div class="wid-content">
+    <div class="row">
+      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listInterview">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Ngày tìm CV</th>
+                <th>Họ và Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Link CV</th>
+                <th>Gọi điện</th>
+                <th>Gửi email</th>
+                <th>Source</th>
+                <th>TTPV.PVCM-Ngày phỏng vấn</th>
+                <th>TTPV.PVCM Note</th>
+                <th>TTPV.PVCM Mail thông báo</th>
+                <th>TTPV.PVCM Người phỏng vấn</th>
+                <th>TTPV.PVCM Kết quả</th>
+                <th>TTPV.PVCM File attachment</th>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control">
+                    <option>Search Summary</option>
+                    <option value="code">Code 001</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchname" placeholder="Search name">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchemail" placeholder="Search email">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchtel" placeholder="Search phone number">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchlinkcv" placeholder="Search link CV">
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchdate" placeholder="Search date">
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search</option>
+                    <option value="001">huynq09</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search người phỏng vấn</option>
+                    <option value="001">huynq09</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search kết quả</option>
+                    <option value="001">Pass</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in listInterview track by item.id">
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="chk_{{ item.id }}" value="">
+                    <span>&nbsp;</span>
+                  </label>
+                </td>
+                <td>{{ item.searchDate }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.telephone }}</td>
+                <td>
+                  <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary">Call</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary">Gửi mail</button>
+                </td>
+                <td>
+                  <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
+                </td>
+                <td>{{ item.interviewDate }}</td>
+                <td>{{ item.note }}</td>
+                <td>{{ item.informer }}</td>
+                <td>{{ item.interviewer }}</td>
+                <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <div st-pagination="" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+        </div>
       </div>
     </div>
   </div>
-
 </div>

@@ -50,8 +50,8 @@
               order: 3,
             },
           })
-          .state('teamlead.convert', {
-            url: '/convert',
+          .state('teamlead.converter', {
+            url: '/converter',
             templateUrl: 'app/pages/teamlead/assignConvert/assign-convert.html',
             controller: 'AssignConvertCtrl',
             title: 'Assign to convert',
