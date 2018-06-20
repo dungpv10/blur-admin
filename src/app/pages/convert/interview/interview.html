@@ -81,12 +81,6 @@
             </thead>
             <tbody>
               <tr ng-repeat="item in listInterview track by item.id">
-                <td>
-                  <label class="custom-checkbox">
-                    <input type="checkbox" id="chk_{{ item.id }}" value="">
-                    <span>&nbsp;</span>
-                  </label>
-                </td>
                 <td>{{ item.searchDate }}</td>
                 <td>{{ item.fullName }}</td>
                 <td>{{ item.email }}</td>
@@ -108,6 +102,9 @@
                 <td>{{ item.informer }}</td>
                 <td>{{ item.interviewer }}</td>
                 <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
+                <td>
+                  <button type="button" class="btn btn-primary">File Attachment</button>
+                </td>
               </tr>
             </tbody>
           </table>

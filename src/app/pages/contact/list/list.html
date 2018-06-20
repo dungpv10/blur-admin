@@ -1,8 +1,10 @@
+<div ng-include="'app/pages/contact/list/widgets/filter.html'"></div>
 <div class="widgets">
-  <div ng-include="'app/pages/teamlead/list/widgets/filter.html'"></div>
+  <div class="wid-content">
   <div class="row">
-    <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
-      <table class="table table-hover" st-table="listTeamlead">
+    <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listTeamlead">
+      <div class="table-responsive">
+      <table class="table table-hover" >
         <thead>
           <tr>
             <th>Ngày tìm CV</th>
@@ -171,7 +173,7 @@
                 <option value="001">phuongnt15</option>
               </select>
             </td>
-            
+
           </tr>
         </thead>
         <tbody>
@@ -199,12 +201,15 @@
             <td>{{ item.ttpvRankingKetQua }}</td>
           </tr>
           <tr>
-              <td colspan="7" class="text-center">
-                <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
-              </td>
+
             </tr>
         </tbody>
       </table>
+      </div>
+      <div class="text-center">
+        <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
+      </div>
     </div>
+  </div>
   </div>
 </div>
