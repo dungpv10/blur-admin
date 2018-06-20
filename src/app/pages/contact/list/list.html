@@ -5,13 +5,27 @@
       <table class="table table-hover" st-table="listTeamlead">
         <thead>
           <tr>
-            <th>Order code</th>
-            <th>Order name</th>
-            <th>Teamlead</th>
-            <th>KPI</th>
-            <th>Deadline</th>
-            <th>Người đề xuất</th>
-            <th>Link JD</th>
+            <th>Ngày tìm CV</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Link CV</th>
+            <th>Source</th>
+            <th>Đơn hàng</th>
+            <th>TTPV.Cham_CV.NgayGoi</th>
+            <th>TTPV.Cham_CV.KetQua</th>
+            <th>TTPV.MoiUngTuyen.TrangThai</th>
+            <th>TTPV.MoiUngTuyen.NgayGoi</th>
+            <th>TTPV.Orientation.KetQua</th>
+            <th>TTPV.Orientation.Ngaypvan</th>
+            <th>TTPV.PVCM.Ketqua</th>
+            <th>TTPV.PVCM.Ngayphongvan</th>
+            <th>TTPV.PVVH.Ketqua</th>
+            <th>TTPV.PVVH.Ngayphongvan</th>
+            <th>TTPV.GTAT.Ketqua</th>
+            <th>TTPV.GTAT.Ngayphongvan</th>
+            <th>TTPV.Offer.Ketqua</th>
+            <th>TTPV.Ranking.Ketqua</th>
           </tr>
           <tr>
             <td>
@@ -59,18 +73,130 @@
                 <option value="001">phuongnt15</option>
               </select>
             </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control">
+                <option>Search Link JD</option>
+                <option value="001">phuongnt15</option>
+                <option value="001">phuongnt15</option>
+              </select>
+            </td>
+            
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="item in listTeamlead">
-            <td>{{ item.orderCode }}</td>
-            <td>{{ item.orderName }}</td>
-            <td>{{ item.teamlead }}</td>
-            <td>{{ item.kpi }}</td>
-            <td>{{ item.deadline }}</td>
-            <td>{{ item.proposer }}</td>
-            <td>
-              <a href="#" target="_blank">{{ item.linkJD }}</td>
+            <td>{{ item.findCVDay }}</td>
+            <td>{{ item.userName }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.numberPhone }}</td>
+            <td><a href="#" target="_blank">{{ item.CVLink }}</a></td>
+            <td>{{ item.source }}</td>
+            <td>{{ item.order }}</td>
+            <td>{{ item.ttpvChamCVNgayGoi }}</td>
+            <td>{{ item.ttpvChamCVKetQua }}</td>
+            <td>{{ item.ttpvMoiUngTuyenKetQua }}</td>
+            <td>{{ item.ttpvMoiUngTuyenTrangThai }}</td>
+            <td>{{ item.ttpvOrientationKetQua }}</td>
+            <td>{{ item.ttpvOrientationNgayPhongVan }}</td>
+            <td>{{ item.ttpvPVCMNgayPhongVan }}</td>
+            <td>{{ item.ttpvPVVHKetQua }}</td>
+            <td>{{ item.ttpvPVVHNgayPhongVan }}</td>
+            <td>{{ item.ttpvGTATNgayPhongVan }}</td>
+            <td>{{ item.ttpvGTATKetQua }}</td>
+            <td>{{ item.ttpvOfferKetQua }}</td>
+            <td>{{ item.ttpvRankingKetQua }}</td>
+            <td>{{ item.ttpvRankingKetQua }}</td>
           </tr>
           <tr>
               <td colspan="7" class="text-center">
