@@ -5,8 +5,9 @@
         .controller('ListTeamleadCtrl', ListTeamleadCtrl);
 
     /** @ngInject */
-    function ListTeamleadCtrl($scope) {
+    function ListTeamleadCtrl($scope, teamleadService) {
         $scope.selectedPageSize = {};
+        $scope.selectedDisplayColumn = {};
         $scope.pageSize = 5;
 
         $scope.listTeamlead = [
@@ -128,24 +129,9 @@
             }
         ];
 
-        $scope.sizes = [
-            {
-                value: 5,
-                text: '5'
-            },
-            {
-                value: 10,
-                text: '10'
-            },
-            {
-                value: 20,
-                text: '20'
-            },
-            {
-                value: 25,
-                text: '25'
-            }
-        ];
+        $scope.sizes = teamleadService.getListPageSize();
+        $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
+        $scope.listDisplayColumns.unshift({value: '', text: 'Order code, Order name, Teamlead, KPI, Deadline, Người chấm'});
 
         $scope.selectedPageSize = $scope.sizes[0];
 

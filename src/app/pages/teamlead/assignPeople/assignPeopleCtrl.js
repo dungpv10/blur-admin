@@ -5,7 +5,7 @@
     .controller('AssignPeopleCtrl', AssignPeopleCtrl);
 
   /** @ngInject */
-  function AssignPeopleCtrl($scope) {
+  function AssignPeopleCtrl($scope, teamleadService) {
     $scope.selectedPageSize = {};
     $scope.pageSize = 5;
 
@@ -131,24 +131,9 @@
       }
     ];
 
-    $scope.sizes = [
-      {
-        value: 5,
-        text: '5'
-      },
-      {
-        value: 10,
-        text: '10'
-      },
-      {
-        value: 20,
-        text: '20'
-      },
-      {
-        value: 25,
-        text: '25'
-      }
-    ];
+    $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
+    $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
+        $scope.listDisplayColumns.unshift({value: '', text: 'Full Name, Phone, Email, Source, Load CV, Người chấm'});
 
     $scope.selectedPageSize = $scope.sizes[0];
 

@@ -25,7 +25,7 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
+  function routeConfig($urlRouterProvider, baSidebarServiceProvider, teamleadServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
     baSidebarServiceProvider.addStaticItem({
@@ -63,5 +63,4 @@
       }]
     });
   }
-
 })();
