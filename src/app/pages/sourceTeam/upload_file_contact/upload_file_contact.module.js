@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.contact.upload_file_contact', [])
+  angular.module('BlurAdmin.pages.sourceteam.upload_file_contact', [])
     .config(routeConfig)
     .config(function(){
       $.jstree.defaults.core.themes.url = true;
@@ -15,9 +15,9 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('contact.upload_file_contact', {
+        .state('source.upload_file_contact', {
           url: '/upload_file_contact',
-          templateUrl: 'app/pages/contact/upload_file_contact/upload_file_contact.html',
+          templateUrl: 'app/pages/sourceTeam/upload_file_contact/upload_file_contact.html',
           title: 'Upload file contact',
           sidebarMeta: {
             order: 200,
