@@ -5,15 +5,19 @@
       .controller('AssignConvertCtrl', AssignConvertCtrl);
 
   /** @ngInject */
-  function AssignConvertCtrl($scope) {
-   var vm = this;
+  function AssignConvertCtrl($scope, teamleadService) {
+    $scope.selectedPageSize = {};
+    $scope.pageSize = 5;
 
-    vm.personalInfo = {};
-    vm.productInfo = {};
-    vm.shipment = {};
+    $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
+    $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
+        $scope.listDisplayColumns.unshift({value: '', text: 'Full Name, Phone, Email, Source, Load CV, Người chấm'});
 
-    vm.arePersonalInfoPasswordsEqual = function () {
-      return vm.personalInfo.confirmPassword && vm.personalInfo.password == vm.personalInfo.confirmPassword;
+    $scope.selectedPageSize = $scope.sizes[0];
+
+    $scope.changePagesize = function () {
+      console.log($scope.selectedPageSize)
+      $scope.pageSize = $scope.selectedPageSize.value;
     };
   }
 
