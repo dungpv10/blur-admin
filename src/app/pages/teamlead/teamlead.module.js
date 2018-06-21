@@ -21,20 +21,14 @@
               order: 1,
             },
           })
-          .state('teamlead.createInfo', {
-            url: '/create-info',
+          .state('teamlead.create', {
+            url: '/create',
             templateUrl: 'app/pages/teamlead/create/create.html',
             controller: 'CreateCtrl',
             title: 'Tạo đơn hàng',
             sidebarMeta: {
               order: 1,
             },
-          })
-          .state('teamlead.createProcedure', {
-            url: '/create-procedure',
-            templateUrl: 'app/pages/teamlead/createProcedure/create-procedure.html',
-            controller: 'CreateProcedureCtrl',
-            title: 'Tạo đơn hàng'
           })
           .state('teamlead.list',
           {
