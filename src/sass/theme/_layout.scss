@@ -256,3 +256,37 @@ a {
     }
   }
 }
+
+@media (min-width: $resL) {
+  .st-table {
+    > thead, tbody {
+      tr {
+        th, td {
+          min-width: 180px;
+          max-width: 180px;
+        }
+      }
+    }
+
+    > thead {
+      th {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    > tbody {
+      > tr {
+        > td {
+          padding: 5px 8px !important;
+        }
+      }
+      tr {
+        td {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

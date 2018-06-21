@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listInterview">
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover st-table">
             <thead>
               <tr>
                 <th>Ngày tìm CV</th>
@@ -91,13 +91,13 @@
                   <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-info btn-block">
                       <i class="glyphicon glyphicon-earphone">&nbsp;</i>
                     <span>Call</span>
                   </button>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary btn-block">
                     <i class="glyphicon glyphicon-envelope">&nbsp;</i><span>Gửi mail</span></button>
                 </td>
                 <td>
@@ -109,7 +109,7 @@
                 <td>{{ item.interviewer }}</td>
                 <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
                 <td>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary btn-block">
                     <i class="glyphicon glyphicon-paperclip">&nbsp;</i>
                     <span>Attach File</span></button>
                 </td>
