@@ -34,7 +34,7 @@
 
 
         $scope.listTeamlead = [];
-        for(let i = 0; i < 25; i++){
+        for(var i = 0; i < 25; i++){
             $scope.listTeamlead.push({
                 findCVDay: '15/12/2018',
                 userName: 'huongtt25',
