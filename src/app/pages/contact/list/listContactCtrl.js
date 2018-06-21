@@ -17,11 +17,9 @@
         for(var i = 0; i < 7; i++){
             $scope.opened.push(false);
         }
-        console.log($scope.opened);
+
         function open(i) {
-            console.log(!$scope.opened[i]);
             $scope.opened[i] = !$scope.opened[i];
-            console.log($scope.opened);
         }
 
         $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];

@@ -106,7 +106,7 @@
                         <i class="glyphicon glyphicon-envelope">&nbsp;</i><span>Gửi mail</span></button>
                     </td>
                     <td>
-                      <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
+                      <a href="{{ item.source }}" target="_blank">{{ item.source }}</a>
                     </td>
                     <td>{{ item.interviewDate }}</td>
                     <td>{{ item.note }}</td>
@@ -123,7 +123,7 @@
               </table>
             </div>
             <div class="text-center">
-              <div st-pagination="" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+              <div st-pagination="" st-template = "app/pages/common/pagination.html" st-items-by-page="pageSize" st-displayed-pages="5"></div>
             </div>
           </div>
     </div>
