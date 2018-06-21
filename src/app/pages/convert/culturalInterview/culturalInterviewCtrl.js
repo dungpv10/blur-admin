@@ -12,15 +12,16 @@
 
     $scope.dt = new Date();
     $scope.open = open;
-    $scope.opened = false;
+    $scope.opened = [false, false];
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
+    $scope.format = $scope.formats[1];
     $scope.options = {
         showWeeks: false
     };
 
-    function open() {
-        $scope.opened = !$scope.opened;
+
+    function open(i) {
+        $scope.opened[i] = !$scope.opened[i];
     }
 
     $scope.listInterview = [];
@@ -49,7 +50,6 @@
     $scope.selectedPageSize = $scope.sizes[0];
 
     $scope.changePagesize = function () {
-      console.log($scope.selectedPageSize)
       $scope.pageSize = $scope.selectedPageSize.value;
     }
   }
