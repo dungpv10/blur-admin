@@ -1,0 +1,25 @@
+<div class="st-filter clearfix">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="control-label" for="page_number">Number of rows per page</label>
+                <select class="form-control" id="page_number" ng-model="selectedPageSize" ng-options="opt.text for opt in sizes" ng-change="changePagesize()">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label" for="display_columns">Display columns</label>
+                <select class="form-control" id="display_columns" ng-model="selectedDisplayColumn"
+                ng-init="selectedDisplayColumn = listDisplayColumns[0]" ng-options="opt.text for opt in listDisplayColumns">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="quick_search">Quick Search</label>
+                    <input type="text" class="form-control" id="quick_search" placeholder="Any Keyword">
+                </div>
+            </div>
+    </div>
+</div>

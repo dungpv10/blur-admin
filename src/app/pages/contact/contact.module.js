@@ -15,7 +15,7 @@
             url: '/contact',
             template : '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
             abstract: true,
-            title: 'contact',
+            title: 'Contact',
             sidebarMeta: {
               icon: 'ion-compose',
               order: 1,

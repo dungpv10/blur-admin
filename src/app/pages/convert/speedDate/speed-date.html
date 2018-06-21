@@ -1,44 +1,86 @@
+<div ng-include="'app/pages/convert/speedDate/widgets/filter.html'"></div>
 <div class="widgets">
+  <div class="wid-content">
+    <div class="row">
+      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listSpeedDate">
+        <div class="table-responsive">
+          <table class="table table-hover" >
+            <thead>
+            <tr>
+              <th>Ngày tìm CV</th>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Số điện thoại</th>
+              <th>Link CV</th>
+              <th>Gọi điện</th>
+              <th>Source</th>
 
-  <div class="row">
-    <div class="col-md-12"
-         ba-panel
-         ba-panel-title="Inline Form"
-         ba-panel-class="with-scroll">
-      <div ng-include="'app/pages/form/layouts/widgets/inlineForm.html'"></div>
+            </tr>
+            <tr>
+              <td>
+                <select class="form-control">
+                  <option>Search Summary</option>
+                  <option value="code">Code 001</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Search Order name</option>
+                  <option value="name">Name 001</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Teamlead</option>
+                  <option value="001">huongtt25</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Search KPI</option>
+                  <option value="001">kpi 001</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>dd/MM/yy</option>
+                  <option value="001">19/06/2018</option>
+                  <option value="001">20/06/2018</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Search người đề xuất</option>
+                  <option value="001">phuongnt15</option>
+                  <option value="001">phuongnt15</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>Search Link JD</option>
+                  <option value="001">phuongnt15</option>
+                  <option value="001">phuongnt15</option>
+                </select>
+              </td>
+            </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in listSpeedDate">
+                <td>{{ item.findCVDay }}</td>
+                <td>{{ item.userName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.numberPhone }}</td>
+                <td><a href="#" target="_blank">{{ item.CVLink }}</a></td>
+                <td>{{ item.call }}</td>
+                <td>{{ item.source }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Basic Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/basicForm.html'"></div>
-      </div>
-
-      <div
-          ba-panel
-          ba-panel-title="Horizontal Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/horizontalForm.html'"></div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Form Without Labels"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/formWithoutLabels.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Block Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/blockForm.html'"></div>
-      </div>
-    </div>
-  </div>
-
 </div>
