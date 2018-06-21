@@ -20,7 +20,8 @@
           linkCV: 'http://drive.google.com/trantuananh.cv',
           status: 0,
           result: 1,
-          proposer: 'phuongnt15'
+          proposer: 'phuongnt15',
+          proposer_link: 'http://drive.google.com/trantuananh.cv'
         });
     }
 
