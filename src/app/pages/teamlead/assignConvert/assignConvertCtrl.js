@@ -21,7 +21,8 @@
           linkCV: 'http://drive.google.com/trantuananh.cv',
           status: 0,
           result: 1,
-          proposer: 'phuongnt15'
+          proposer: 'phuongnt15',
+          converterLink : 'https://google.com'
         });
     }
 
@@ -34,7 +35,13 @@
     $scope.changePagesize = function () {
       console.log($scope.selectedPageSize)
       $scope.pageSize = $scope.selectedPageSize.value;
+    };
+
+    $scope.checkAll = false;
+    $scope.fncCheckAll = function(){
+        return $scope.checkAll = !$scope.checkAll;
     }
+
   }
 
 })();
