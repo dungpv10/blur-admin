@@ -25,7 +25,7 @@
               <tr>
                 <td>
                   <div class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                    <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
                   </span>
