@@ -10,6 +10,20 @@
         $scope.selectedDisplayColumn = {};
         $scope.pageSize = 5;
 
+        $scope.dt = new Date();
+        $scope.open = open;
+        $scope.opened = false;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.options = {
+            showWeeks: false
+        };
+
+        function open() {
+            $scope.opened = !$scope.opened;
+        }
+
+
         $scope.listTeamlead = [];
         for(let i = 0; i < 25; i++){
             $scope.listTeamlead.push({
@@ -35,7 +49,6 @@
                 ttpvRankingKetQua : 'Trúng tuyển'
             });
         }
-
 
         $scope.sizes = teamleadService.getListPageSize();
         $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
