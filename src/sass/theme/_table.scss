@@ -296,13 +296,15 @@ th {
 .pagination > li > span{
   color: $default-text;
   border-color: $border;
+  margin-right : 5px;
+  border-radius: 5px;
 }
 
 
 .pagination > li:first-of-type > a,
 .pagination > li:first-of-type > span{
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  //border-bottom-left-radius: 5px;
 }
 
 .pagination > li:last-of-type > a,

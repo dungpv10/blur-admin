@@ -25,7 +25,7 @@
         }
 
         $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        $scope.format = $scope.formats[0];
+        $scope.format = $scope.formats[1];
         $scope.options = {
             showWeeks: false
         };
