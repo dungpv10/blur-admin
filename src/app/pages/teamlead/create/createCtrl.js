@@ -6,12 +6,7 @@
   
     /** @ngInject */
     function CreateCtrl($scope) {
-     var vm = this;
-  
-      vm.personalInfo = {};
-      vm.productInfo = {};
-      vm.shipment = {};
-
+     $scope.activeTab = 0;
     }
   
   })();

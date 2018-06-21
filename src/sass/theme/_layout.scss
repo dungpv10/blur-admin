@@ -308,3 +308,40 @@ a {
     }
   }
 }
+
+.st-tabs {
+  margin: 0;
+  padding: 0;
+  &, li {
+    list-style: none;
+    list-style-type: none;
+  }
+  > li {
+    display: inline-block;
+    a {
+      display: block;
+      height: 100%;
+      text-transform: uppercase !important;
+      color: $tab-text;
+      font-weight: 500;
+      padding: 6px 0;
+    }
+
+    &.active {
+      a {
+        border-bottom: solid 2px $primary;
+        color: $primary;
+      }
+    }
+
+    &:first-child {
+      padding-right: 25px;
+    }
+  }
+}
+
+.st-form {
+  label.control-label {
+    font-weight: 600;
+  }
+}

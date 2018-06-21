@@ -9,7 +9,7 @@
         .config(routeConfig);
   
     /** @ngInject */
-    function routeConfig($stateProvider, teamleadServiceProvider) {
+    function routeConfig($stateProvider) {
       $stateProvider
           .state('teamlead', {
             url: '/teamlead',
@@ -21,14 +21,20 @@
               order: 1,
             },
           })
-          .state('teamlead.create', {
-            url: '/create',
+          .state('teamlead.createInfo', {
+            url: '/create-info',
             templateUrl: 'app/pages/teamlead/create/create.html',
             controller: 'CreateCtrl',
             title: 'Tạo đơn hàng',
             sidebarMeta: {
               order: 1,
             },
+          })
+          .state('teamlead.createProcedure', {
+            url: '/create-procedure',
+            templateUrl: 'app/pages/teamlead/createProcedure/create-procedure.html',
+            controller: 'CreateProcedureCtrl',
+            title: 'Tạo đơn hàng'
           })
           .state('teamlead.list',
           {

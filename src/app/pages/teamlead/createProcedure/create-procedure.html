@@ -1,0 +1,90 @@
+<div ng-include="'app/pages/teamlead/widgets/tabs.html'"></div>
+<div class="widgets">
+  <div class="wid-content">
+    <div ba-panel>
+      <form class="st-form" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step1">TTDH_Step 1</label>
+              <input type="text" id="step1" class="form-control" value="Tiếp nhận CV" placeholder="Tiếp nhận CV">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step1">TTDH_Step 6</label>
+              <select class="form-control" id="step6" ng-model="step6Selected" ng-init="step6Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step2">TTDH_Step 2</label>
+              <select class="form-control" id="step2" ng-model="step2Selected" ng-init="step2Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step7">TTDH_Step 7</label>
+              <select class="form-control" id="step7" ng-model="step7Selected" ng-init="step7Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step3">TTDH_Step 3</label>
+              <select class="form-control" id="step3" ng-model="step3Selected" ng-init="step3Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step8">TTDH_Step 8</label>
+              <select class="form-control" id="step8" ng-model="step8Selected" ng-init="step8Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step4">TTDH_Step 4</label>
+              <select class="form-control" id="step4" ng-model="step4Selected" ng-init="step4Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step9">TTDH_Step 9</label>
+              <select class="form-control" id="step9" ng-model="step9Selected" ng-init="step9Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step5">TTDH_Step 5</label>
+              <select class="form-control" id="step5" ng-model="step5Selected" ng-init="step5Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label" for="step10">TTDH_Step 10</label>
+              <select class="form-control" id="step10" ng-model="step10Selected" ng-init="step10Selected = stepOptions[0]" ng-options="opt.text for opt in stepOptions"></select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 text-left">
+            <a href="#/teamlead/create-info" class="btn btn-default">
+              <i class="ion-arrow-left-c">&nbsp;</i>
+              <span>Previous</span>
+            </a>
+          </div>
+          <div class="col-md-6 text-right">
+              <input type="submit" class="btn btn-info" value="Tạo đơn hàng">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

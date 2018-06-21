@@ -1,84 +1,86 @@
+<div ng-include="'app/pages/teamlead/list/widgets/filter.html'"></div>
 <div class="widgets">
-  <div ng-include="'app/pages/teamlead/list/widgets/filter.html'"></div>
-  <div class="row">
-    <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
-      <table class="table table-hover" st-table="listTeamlead">
-        <thead>
-          <tr>
-            <th>Order code</th>
-            <th>Order name</th>
-            <th>Teamlead</th>
-            <th>KPI</th>
-            <th>Deadline</th>
-            <th>Người đề xuất</th>
-            <th>Link JD</th>
-          </tr>
-          <tr>
-            <td>
-              <select class="form-control">
-                <option>Search Summary</option>
-                <option value="code">Code 001</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>Search Order name</option>
-                <option value="name">Name 001</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>Teamlead</option>
-                <option value="001">huongtt25</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>Search KPI</option>
-                <option value="001">kpi 001</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>dd/MM/yy</option>
-                <option value="001">19/06/2018</option>
-                <option value="001">20/06/2018</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>Search người đề xuất</option>
-                <option value="001">phuongnt15</option>
-                <option value="001">phuongnt15</option>
-              </select>
-            </td>
-            <td>
-              <select class="form-control">
-                <option>Search Link JD</option>
-                <option value="001">phuongnt15</option>
-                <option value="001">phuongnt15</option>
-              </select>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="item in listTeamlead">
-            <td>{{ item.orderCode }}</td>
-            <td>{{ item.orderName }}</td>
-            <td>{{ item.teamlead }}</td>
-            <td>{{ item.kpi }}</td>
-            <td>{{ item.deadline }}</td>
-            <td>{{ item.proposer }}</td>
-            <td>
-              <a href="#" target="_blank">{{ item.linkJD }}</td>
-          </tr>
-          <tr>
-              <td colspan="7" class="text-center">
-                <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
-              </td>
-            </tr>
-        </tbody>
-      </table>
+  <div class="wid-content">
+    <div class="row">
+      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listTeamlead">
+        <div class="table-responsive">
+          <table class="table table-hover st-table">
+            <thead>
+              <tr>
+                <th>Order code</th>
+                <th>Order name</th>
+                <th>Teamlead</th>
+                <th>KPI</th>
+                <th>Deadline</th>
+                <th>Người đề xuất</th>
+                <th>Link JD</th>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control">
+                    <option>Search Summary</option>
+                    <option value="code">Code 001</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search Order name</option>
+                    <option value="name">Name 001</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Teamlead</option>
+                    <option value="001">huongtt25</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search KPI</option>
+                    <option value="001">kpi 001</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>dd/MM/yy</option>
+                    <option value="001">19/06/2018</option>
+                    <option value="001">20/06/2018</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search người đề xuất</option>
+                    <option value="001">phuongnt15</option>
+                    <option value="001">phuongnt15</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control">
+                    <option>Search Link JD</option>
+                    <option value="001">phuongnt15</option>
+                    <option value="001">phuongnt15</option>
+                  </select>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="st-row__parent" ng-repeat="item in listTeamlead track by item.id">
+                <td>{{ item.orderCode }}</td>
+                <td>{{ item.orderName }}</td>
+                <td>{{ item.teamlead }}</td>
+                <td>{{ item.kpi }}</td>
+                <td>{{ item.deadline }}</td>
+                <td>{{ item.proposer }}</td>
+                <td>
+                  <a href="#" target="_blank">{{ item.linkJD }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
