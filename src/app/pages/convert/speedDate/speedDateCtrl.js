@@ -12,7 +12,9 @@
         $scope.selectedDisplayColumn = {};
         $scope.pageSize = 5;
         $scope.opened = false;
+        $scope.orderNumber = [
 
+        ];
         function open() {
             $scope.opened = !$scope.opened;
         }
