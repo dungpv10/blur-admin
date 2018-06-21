@@ -266,6 +266,13 @@ a {
             min-width: 180px;
             max-width: 180px;
           }
+        
+          &.action {
+            > td:first-child {
+              min-width: auto;
+              max-width: auto;
+            }
+          }
         }
       }
     }
