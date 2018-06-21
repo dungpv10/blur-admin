@@ -259,10 +259,10 @@ a {
 
 @media (min-width: $resL) {
   .st-table {
-    > thead, tbody {
+    > tbody {
       > tr {
-        > th, td {
-          &.st-row__parent {
+        &.st-row__parent {
+        > td {
             min-width: 180px;
             max-width: 180px;
           }

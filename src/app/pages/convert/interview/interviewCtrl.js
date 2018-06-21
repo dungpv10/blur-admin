@@ -12,7 +12,9 @@
 
         $scope.dt = new Date();
         $scope.open = open;
+        $scope.open1 = open1;
         $scope.opened = false;
+        $scope.opened1 = false;
         $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
         $scope.format = $scope.formats[0];
         $scope.options = {
@@ -21,6 +23,10 @@
 
         function open() {
             $scope.opened = !$scope.opened;
+        }
+
+        function open1() {
+            $scope.opened1 = !$scope.opened1;
         }
 
         $scope.listInterview = [];

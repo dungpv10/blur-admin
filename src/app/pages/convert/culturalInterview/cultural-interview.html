@@ -2,125 +2,130 @@
 <div class="widgets">
   <div class="wid-content">
     <div class="row">
-      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listInterview">
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Ngày tìm CV</th>
-                <th>Họ và Tên</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Link CV</th>
-                <th>Gọi điện</th>
-                <th>Gửi email</th>
-                <th>Source</th>
-                <th>TTPV.PVCM-Ngày phỏng vấn</th>
-                <th>TTPV.PVCM Note</th>
-                <th>TTPV.PVCM Mail thông báo</th>
-                <th>TTPV.PVCM Người phỏng vấn</th>
-                <th>TTPV.PVCM Kết quả</th>
-                <th>TTPV.PVCM File attachment</th>
-              </tr>
-              <tr>
-                <td>
-                  <div class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
-                  </div>
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchname" placeholder="Search name">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchemail" placeholder="Search email">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchtel" placeholder="Search phone number">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchlinkcv" placeholder="Search link CV">
-                </td>
-                <td>
-                  <input type="text" class="form-control" readonly>
-                </td>
-                <td>
-                  <input type="text" class="form-control" readonly>
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="txt_searchdate" placeholder="Search date">
-                </td>
-                <td>
-                  <input type="text" class="form-control" readonly>
-                </td>
-                <td>
-                  <select class="form-control">
-                    <option>Search</option>
-                    <option value="001">huynq09</option>
-                  </select>
-                </td>
-                <td>
-                  <select class="form-control">
-                    <option>Search người phỏng vấn</option>
-                    <option value="001">huynq09</option>
-                  </select>
-                </td>
-                <td>
-                  <select class="form-control">
-                    <option>Search kết quả</option>
-                    <option value="001">Pass</option>
-                  </select>
-                </td>
-                <td>
-                  <input type="text" class="form-control" readonly>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="item in listInterview track by item.id">
-                <td>{{ item.searchDate }}</td>
-                <td>{{ item.fullName }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.telephone }}</td>
-                <td>
-                  <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                      <i class="glyphicon glyphicon-earphone">&nbsp;</i>
-                    <span>Call</span>
-                  </button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                    <i class="glyphicon glyphicon-envelope">&nbsp;</i><span>Gửi mail</span></button>
-                </td>
-                <td>
-                  <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
-                </td>
-                <td>{{ item.interviewDate }}</td>
-                <td>{{ item.note }}</td>
-                <td>{{ item.informer }}</td>
-                <td>{{ item.interviewer }}</td>
-                <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                    <i class="glyphicon glyphicon-paperclip">&nbsp;</i>
-                    <span>Attach File</span></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="text-center">
-          <div st-pagination="" st-items-by-page="pageSize" st-displayed-pages="5"></div>
-        </div>
-      </div>
+        <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listInterview">
+            <div class="table-responsive">
+              <table class="table table-hover st-table">
+                <thead>
+                  <tr class="st-row__parent">
+                    <th>Ngày tìm CV</th>
+                    <th>Họ và Tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Link CV</th>
+                    <th>Gọi điện</th>
+                    <th>Gửi email</th>
+                    <th>Source</th>
+                    <th>TTPV.PVCM-Ngày phỏng vấn</th>
+                    <th>TTPV.PVCM Note</th>
+                    <th>TTPV.PVCM Mail thông báo</th>
+                    <th>TTPV.PVCM Người phỏng vấn</th>
+                    <th>TTPV.PVCM Kết quả</th>
+                    <th>TTPV.PVCM File attachment</th>
+                  </tr>
+                  <tr class="st-row__parent">
+                    <td>
+                      <div class="input-group st-calendar">
+                        <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="txt_searchname" placeholder="Search name">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="txt_searchemail" placeholder="Search email">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="txt_searchtel" placeholder="Search phone number">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="txt_searchlinkcv" placeholder="Search link CV">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                    </td>
+                    <td>
+                      <div class="input-group st-calendar">
+                        <input type="text" class="form-control" ng-change="open1()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt1" is-open="opened1" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" readonly>
+                    </td>
+                    <td>
+                      <select class="form-control">
+                        <option>Search</option>
+                        <option value="001">huynq09</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="form-control">
+                        <option>Search người phỏng vấn</option>
+                        <option value="001">huynq09</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="form-control">
+                        <option>Search kết quả</option>
+                        <option value="001">Pass</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" readonly>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="st-row__parent" ng-repeat="item in listInterview track by item.id">
+                    <td>{{ item.searchDate }}</td>
+                    <td>{{ item.fullName }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.telephone }}</td>
+                    <td>
+                      <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-info btn-block">
+                          <i class="glyphicon glyphicon-earphone">&nbsp;</i>
+                        <span>Call</span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-block">
+                        <i class="glyphicon glyphicon-envelope">&nbsp;</i><span>Gửi mail</span></button>
+                    </td>
+                    <td>
+                      <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
+                    </td>
+                    <td>{{ item.interviewDate }}</td>
+                    <td>{{ item.note }}</td>
+                    <td>{{ item.informer }}</td>
+                    <td>{{ item.interviewer }}</td>
+                    <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-block">
+                        <i class="glyphicon glyphicon-paperclip">&nbsp;</i>
+                        <span>Attach File</span></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-center">
+              <div st-pagination="" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+            </div>
+          </div>
     </div>
   </div>
 </div>
