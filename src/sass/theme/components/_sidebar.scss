@@ -141,14 +141,14 @@ a.al-sidebar-list-link {
       height: auto;
       line-height: 29px;
       &:hover {
-        color: $primary;
+        color: $sidebar-active-text;
       }
     }
     &.selected:not(.with-sub-menu) > a {
       border: none;
       background-color: $bg-active-sidebar;
       &:hover {
-        color: $sidebar-text;
+        color: $sidebar-active-text;
       }
     }
     &.selected > a {

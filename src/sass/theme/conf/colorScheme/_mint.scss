@@ -11,7 +11,7 @@ $border-light: tint($border, 15%);
 $input-border: shade($border, 5%);
 $input-background: #ffffff;
 
-$sidebar: rgba(27, 42, 75, 1); //#1C2B36;
+$sidebar: #1b294b; //#1C2B36;
 $sidebar-text: rgba(136, 149, 181, 1);
 $sidebar-active-text: #fff;
 $dropdown-text: #7d7d7d;
@@ -46,4 +46,4 @@ $success-bg: tint($success, 20%);
 $warning-bg: tint($warning, 20%);
 $danger-bg: tint($danger, 20%);
 
-$bg-active-sidebar: rgba(16, 172, 220, 1);
+$bg-active-sidebar: #10acdc;
