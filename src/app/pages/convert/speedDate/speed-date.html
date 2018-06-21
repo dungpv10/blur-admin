@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listSpeedDate">
         <div class="table-responsive">
-          <table class="table table-hover" >
+          <table class="table table-hover st-table" >
             <thead>
-            <tr>
+            <tr class="st-row__parent">
               <th>Ngày tìm CV</th>
               <th>Họ và tên</th>
               <th>Email</th>
@@ -16,12 +16,14 @@
               <th>Source</th>
 
             </tr>
-            <tr>
+            <tr class="st-row__parent">
               <td>
-                <select class="form-control">
-                  <option>Search Summary</option>
-                  <option value="code">Code 001</option>
-                </select>
+                <div class="input-group st-calendar">
+                  <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open()"><i class="ion-calendar"></i></button>
+                  </span>
+                </div>
               </td>
               <td>
                 <select class="form-control">
@@ -42,11 +44,7 @@
                 </select>
               </td>
               <td>
-                <select class="form-control">
-                  <option>dd/MM/yy</option>
-                  <option value="001">19/06/2018</option>
-                  <option value="001">20/06/2018</option>
-                </select>
+                <input type="text" class="form-control" id="txt_search_cv" placeholder="Search link CV">
               </td>
               <td>
                 <select class="form-control">
@@ -65,11 +63,16 @@
             </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="item in listSpeedDate">
+              <tr class="st-row__parent" ng-repeat="item in listSpeedDate">
                 <td>{{ item.findCVDay }}</td>
                 <td>{{ item.userName }}</td>
                 <td>{{ item.email }}</td>
-                <td>{{ item.numberPhone }}</td>
+                <td>
+                  <button type="button" class="btn btn-info btn-block">
+                    <i class="glyphicon glyphicon-earphone">&nbsp;</i>
+                    <span>Call</span>
+                  </button>
+                </td>
                 <td><a href="#" target="_blank">{{ item.CVLink }}</a></td>
                 <td>{{ item.call }}</td>
                 <td>{{ item.source }}</td>

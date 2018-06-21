@@ -11,7 +11,12 @@
         $scope.selectedPageSize = {};
         $scope.selectedDisplayColumn = {};
         $scope.pageSize = 5;
+        $scope.opened = false;
 
+        function open() {
+            $scope.opened = !$scope.opened;
+        }
+        $scope.open = open;
         $scope.listSpeedDate = [];
         for (var i = 0; i < 23; i++) {
             $scope.listSpeedDate.push({
