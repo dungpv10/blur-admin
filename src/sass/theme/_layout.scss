@@ -260,10 +260,12 @@ a {
 @media (min-width: $resL) {
   .st-table {
     > thead, tbody {
-      tr {
-        th, td {
-          min-width: 180px;
-          max-width: 180px;
+      > tr {
+        > th, td {
+          &.st-row__parent {
+            min-width: 180px;
+            max-width: 180px;
+          }
         }
       }
     }
@@ -280,13 +282,22 @@ a {
           padding: 5px 8px !important;
         }
       }
-      tr {
-        td {
+      > tr {
+        > td {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
       }
+    }
+  }
+}
+
+.input-group.st-calendar {
+  > span.input-group-btn {
+    background-color: $info;
+    button {
+      color: #fff;
     }
   }
 }

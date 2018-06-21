@@ -6,7 +6,7 @@
         <div class="table-responsive">
           <table class="table table-hover st-table">
             <thead>
-              <tr>
+              <tr class="st-row__parent">
                 <th>Ngày tìm CV</th>
                 <th>Họ và Tên</th>
                 <th>Email</th>
@@ -22,9 +22,9 @@
                 <th>TTPV.PVCM Kết quả</th>
                 <th>TTPV.PVCM File attachment</th>
               </tr>
-              <tr>
+              <tr class="st-row__parent">
                 <td>
-                  <div class="input-group">
+                  <div class="input-group st-calendar">
                     <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -82,7 +82,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="item in listInterview track by item.id">
+              <tr class="st-row__parent" ng-repeat="item in listInterview track by item.id">
                 <td>{{ item.searchDate }}</td>
                 <td>{{ item.fullName }}</td>
                 <td>{{ item.email }}</td>
