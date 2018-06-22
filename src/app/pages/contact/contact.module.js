@@ -17,7 +17,7 @@
             abstract: true,
             title: 'Contact',
             sidebarMeta: {
-              icon: 'ion-person',
+              icon: 'ion-ios-people',
               order: 1,
             },
           })

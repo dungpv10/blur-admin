@@ -17,7 +17,7 @@
             abstract: true,
             title: 'Convert',
             sidebarMeta: {
-              icon: 'ion-person',
+              icon: 'ion-ios-people',
               order: 2,
             },
           })

@@ -17,7 +17,7 @@
             abstract: true,
             title: 'Teamlead',
             sidebarMeta: {
-              icon: 'ion-compose',
+              icon: 'ion-ios-people',
               order: 1,
             },
           })
