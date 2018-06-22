@@ -1,4 +1,4 @@
-<div ng-include="'app/pages/teamlead/assignPeople/widgets/filter.html'"></div>
+<div ng-include="'app/pages/teamlead/assignConvert/widgets/filter.html'"></div>
 <div class="widgets">
     <div class="wid-content">
         <div class="row">
@@ -17,45 +17,55 @@
                                 <th>Converter Link</th>
                             </tr>
                             <tr>
-                                <td>
-                                    <input type="text" class="form-control" id="txt_search_name" disabled>
-                                </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Search Name</option>
-                                        <option value="code">Code 001</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="text" placeholder="Search Email" class="form-control" id="txt_search_email">
-                                </td>
-                                <td>
-                                    <input type="text" placeholder="Search Link CV" class="form-control" id="txt_search_cv">
-                                </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Select Status</option>
-                                        <option value="001">kpi 001</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Select Result</option>
-                                        <option value="001">19/06/2018</option>
-                                        <option value="001">20/06/2018</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Search Converter</option>
-                                        <option value="001">phuongnt15</option>
-                                        <option value="001">phuongnt15</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" id="txt_searchtel" placeholder="Search converter link">
-                                </td>
-                            </tr>
+                                    <td>
+                                        <input type="text" id="" value="" class="form-control" disabled>
+                                    </td>
+                                    <td>
+                                        <ui-select ng-model="searchName.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                                            search-enabled="false">
+                                            <ui-select-match placeholder="Search Name">
+                                                <span> {{$select.selected.name}}</span>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="item in listFullname | filter: $select.search">
+                                                <span ng-bind-html="item.name"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txt_search_email" value="" placeholder="Search Email" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txt_search_link_cv" value="" placeholder="Search Link CV" class="form-control">
+                                    </td>
+                                    <td>
+                                        <ui-select ng-model="searchStatus.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                                            search-enabled="false">
+                                            <ui-select-match placeholder="Search Status">
+                                                <span> {{$select.selected.name}}</span>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="item in statuses | filter: $select.search">
+                                                <span ng-bind-html="item.name"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </td>
+                                    <td>
+                                        <ui-select ng-model="searchResult.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                                            search-enabled="false">
+                                            <ui-select-match placeholder="Search Result">
+                                                <span> {{$select.selected.name}}</span>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="item in listResults | filter: $select.search">
+                                                <span ng-bind-html="item.name"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txt_search_score_user" value="" placeholder="Search Người Chấm" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="txt_search_score_user_link" value="" placeholder="Search Người Chấm CV" class="form-control">
+                                    </td>
+                                </tr>
                         </thead>
                         <tbody>
                             <tr class="st-row__parent action" ng-repeat="item in listConverter track by item.id">
@@ -79,7 +89,7 @@
                     </table>
                 </div>
                 <div colspan="7" class="text-center">
-                    <div st-pagination="" st-template = "app/pages/common/pagination.html" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+                    <div st-pagination="" st-template = "app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
                 </div>
             </div>
         </div>

@@ -74,6 +74,56 @@
             ];
         }
 
+        factory.getListFullname = function () {
+            var listFullname = [];
+            for (var i = 0; i < 10; ++i) {
+                listFullname.push({
+                    id: i,
+                    name: 'Tran Tuan Anh'
+                });
+            }
+            return listFullname;
+        }
+
+        factory.getListStatus = function () {
+            return [
+                {
+                    id: 0,
+                    name: 'Start'
+                },
+                {
+                    id: 1,
+                    name: 'In Progress'
+                },
+                {
+                    id: 2,
+                    name: 'Relsoved'
+                },
+                {
+                    id: 3,
+                    name: 'Complete'
+                },
+                {
+                    id: 4,
+                    name: 'Close'
+                }
+            ];
+        }
+
+        factory.getListResult = function () {
+            return [
+                {
+                    id: 0,
+                    name: 'Pending'
+                },
+                {
+                    id: 1,
+                    name: 'Pass'
+                }
+            ];
+        }
+
+
         return factory;
     });
 })();

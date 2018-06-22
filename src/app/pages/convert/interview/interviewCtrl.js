@@ -48,16 +48,26 @@
           });
         }
     
-        $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
+        $scope.sizes = teamleadService.getListPageSize();
         $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
-            $scope.listDisplayColumns.unshift({value: '', text: 'Source, Phone, Email, Link CV'});
-    
-        $scope.selectedPageSize = $scope.sizes[0];
-    
-        $scope.changePagesize = function () {
-          console.log($scope.selectedPageSize)
-          $scope.pageSize = $scope.selectedPageSize.value;
-        }
+        $scope.listFullname = teamleadService.getListFullname();
+        $scope.listResults = teamleadService.getListResult();
+        $scope.listSearchName = [
+            {
+                id: 1,
+                name: 'huynd14'
+            },
+            {
+                id: 2,
+                name: 'quangnt15'
+            },
+            {
+                id: 3,
+                name: 'tuananh'
+            }
+        ];
+
+        $scope.selectedPageSize.selected = $scope.sizes[0];
       }
   
   })();

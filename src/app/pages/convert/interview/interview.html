@@ -25,10 +25,14 @@
               <tr class="st-row__parent">
                 <td>
                   <div class="input-group st-calendar">
-                    <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
+                    <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options"
+                      ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
+                    />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
                   </div>
                 </td>
                 <td>
@@ -54,32 +58,51 @@
                 </td>
                 <td>
                   <div class="input-group st-calendar">
-                    <input type="text" class="form-control" ng-change="open1()" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt1" is-open="opened1" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
+                    <input type="text" class="form-control" ng-change="open1()" uib-datepicker-popup="{{format}}" datepicker-options="options"
+                      ng-model="dt1" is-open="opened1" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
+                    />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
                   </div>
                 </td>
                 <td>
                   <input type="text" class="form-control" readonly>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search</option>
-                    <option value="001">huynq09</option>
-                  </select>
+                  <ui-select ng-model="searchMailThongbao.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search Mail">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listSearchName | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search người phỏng vấn</option>
-                    <option value="001">huynq09</option>
-                  </select>
+                  <ui-select ng-model="searchMailThongbao.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search người phỏng vấn">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listSearchName | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search kết quả</option>
-                    <option value="001">Pass</option>
-                  </select>
+                  <ui-select ng-model="searchResult.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search kết quả">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listResults | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
                   <input type="text" class="form-control" readonly>
@@ -97,13 +120,15 @@
                 </td>
                 <td>
                   <button type="button" class="btn btn-info btn-block">
-                      <i class="glyphicon glyphicon-earphone">&nbsp;</i>
+                    <i class="glyphicon glyphicon-earphone">&nbsp;</i>
                     <span>Call</span>
                   </button>
                 </td>
                 <td>
                   <button type="button" class="btn btn-primary btn-block">
-                    <i class="glyphicon glyphicon-envelope">&nbsp;</i><span>Gửi mail</span></button>
+                    <i class="glyphicon glyphicon-envelope">&nbsp;</i>
+                    <span>Gửi mail</span>
+                  </button>
                 </td>
                 <td>
                   <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
@@ -116,14 +141,15 @@
                 <td>
                   <button type="button" class="btn btn-primary btn-block">
                     <i class="glyphicon glyphicon-paperclip">&nbsp;</i>
-                    <span>Attach File</span></button>
+                    <span>Attach File</span>
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="text-center">
-          <div st-pagination="" st-template = "app/pages/common/pagination.html" st-items-by-page="pageSize" st-displayed-pages="5"></div>
+          <div st-pagination="" st-template="app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
         </div>
       </div>
     </div>

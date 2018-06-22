@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.convert')
-      .controller('CulturalInterviewCtrl', CulturalInterviewCtrl);
+    .controller('CulturalInterviewCtrl', CulturalInterviewCtrl);
 
   /** @ngInject */
   function CulturalInterviewCtrl($scope, teamleadService) {
@@ -16,12 +16,12 @@
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[1];
     $scope.options = {
-        showWeeks: false
+      showWeeks: false
     };
 
 
     function open(i) {
-        $scope.opened[i] = !$scope.opened[i];
+      $scope.opened[i] = !$scope.opened[i];
     }
 
     $scope.listInterview = [];
@@ -43,15 +43,26 @@
       });
     }
 
-    $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
+    $scope.sizes = teamleadService.getListPageSize();
     $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
-        $scope.listDisplayColumns.unshift({value: '', text: 'Source, Phone, Email, Link CV'});
+    $scope.listFullname = teamleadService.getListFullname();
+    $scope.listResults = teamleadService.getListResult();
+    $scope.listSearchName = [
+      {
+        id: 1,
+        name: 'huynd14'
+      },
+      {
+        id: 2,
+        name: 'quangnt15'
+      },
+      {
+        id: 3,
+        name: 'tuananh'
+      }
+    ];
 
-    $scope.selectedPageSize = $scope.sizes[0];
-
-    $scope.changePagesize = function () {
-      $scope.pageSize = $scope.selectedPageSize.value;
-    }
+    $scope.selectedPageSize.selected = $scope.sizes[0];
   }
 
 })();

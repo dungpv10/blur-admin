@@ -25,16 +25,13 @@
         });
     }
 
-    $scope.sizes = $scope.sizes = teamleadService.getListPageSize();
+    $scope.sizes = teamleadService.getListPageSize();
     $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
-    $scope.listDisplayColumns.unshift({ value: '', text: 'Full Name, Phone, Email, Source, Load CV, Người chấm' });
+    $scope.listFullname = teamleadService.getListFullname();
+    $scope.statuses = teamleadService.getListStatus();
+    $scope.listResults = teamleadService.getListResult();
 
-    $scope.selectedPageSize = $scope.sizes[0];
-
-    $scope.changePagesize = function () {
-      console.log($scope.selectedPageSize)
-      $scope.pageSize = $scope.selectedPageSize.value;
-    }
+    $scope.selectedPageSize.selected = $scope.sizes[0];
   }
 
 })();

@@ -5,8 +5,7 @@
         .controller('SpeedDateCtrl', SpeedDateCtrl);
 
     /** @ngInject */
-    function SpeedDateCtrl($scope) {
-        var vm = this;
+    function SpeedDateCtrl($scope, teamleadService) {
 
         $scope.selectedPageSize = {};
         $scope.selectedDisplayColumn = {};
@@ -31,8 +30,13 @@
                 source: 'source'
             });
         }
+
+        $scope.sizes = teamleadService.getListPageSize();
+        $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
+        $scope.listFullname = teamleadService.getListFullname();
+
+        $scope.selectedPageSize.selected = $scope.sizes[0];
     }
 
 })();
-  
-  
+
