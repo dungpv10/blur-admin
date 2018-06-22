@@ -28,14 +28,51 @@
 
         $scope.sizes = teamleadService.getListPageSize();
         $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
-        $scope.listDisplayColumns.unshift({ value: '', text: 'Order code, Order name, Teamlead, KPI, Deadline, Người chấm' });
+        $scope.listFullname = teamleadService.getListFullname();
+        $scope.listOrderCode = [
+            {
+                id: 1,
+                name: 'Code001'
+            },
+            {
+                id: 1,
+                name: 'Code002'
+            }
+        ];
 
-        $scope.selectedPageSize = $scope.sizes[0];
+        $scope.listOrderName = [
+            {
+                id: 1,
+                name: 'Chuyên viên đào tạo'
+            },
+            {
+                id: 2,
+                name: 'Chuyên viên tuyển dụng'
+            }
+        ];
 
-        $scope.changePagesize = function () {
-            console.log($scope.selectedPageSize)
-            $scope.pageSize = $scope.selectedPageSize.value;
-        }
+        $scope.listKPI = [
+            {
+                id: 1,
+                name: 'KPI 001'
+            },
+            {
+                id: 1,
+                name: 'KPI 002'
+            }
+        ];
+        $scope.listDeadline = [
+            {
+                id: '08/01/2018',
+                name: '08/01/2018'
+            },
+            {
+                id: '08/02/2018',
+                name: '08/02/2018'
+            }
+        ];
+
+        $scope.selectedPageSize.selected = $scope.sizes[0];
     }
 
 })();

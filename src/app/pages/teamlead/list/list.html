@@ -17,42 +17,70 @@
               </tr>
               <tr>
                 <td>
-                  <select class="form-control">
-                    <option>Search Summary</option>
-                    <option value="code">Code 001</option>
-                  </select>
+                  <ui-select ng-model="searchSummary.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search Summary">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listOrderCode | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search Order name</option>
-                    <option value="name">Name 001</option>
-                  </select>
+                  <ui-select ng-model="searchOrderName.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search Order name">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listOrderName | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Teamlead</option>
-                    <option value="001">huongtt25</option>
-                  </select>
+                  <ui-select ng-model="searchTeamlead.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Teamlead">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listFullname | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search KPI</option>
-                    <option value="001">kpi 001</option>
-                  </select>
+                  <ui-select ng-model="searchKPI.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search KPI">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listKPI | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>dd/MM/yy</option>
-                    <option value="001">19/06/2018</option>
-                    <option value="001">20/06/2018</option>
-                  </select>
+                  <ui-select ng-model="searchDeadline.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="dd/MM/yy">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listDeadline | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
-                  <select class="form-control">
-                    <option>Search người đề xuất</option>
-                    <option value="001">phuongnt15</option>
-                    <option value="001">phuongnt15</option>
-                  </select>
+                  <ui-select ng-model="searchProposer.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search người đề xuất">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listFullname | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
                 </td>
                 <td>
                   <select class="form-control">
@@ -78,7 +106,7 @@
           </table>
         </div>
         <div class="text-center">
-          <div st-pagination="" st-items-by-page="selectedPageSize.value" st-displayed-pages="5"></div>
+          <div st-pagination="" st-template="app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
         </div>
       </div>
     </div>

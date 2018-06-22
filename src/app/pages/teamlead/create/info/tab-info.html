@@ -53,8 +53,8 @@
             </span>
             <div class="input-group st-calendar">
                 <input type="text" class="form-control" ng-change="open(0)" uib-datepicker-popup="{{format}}" datepicker-options="options"
-                    ng-model="itemOrder.orderDate" is-open="opened[0]" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
-                />
+                    ng-model="itemOrder.orderDate" is-open="opened[0]" close-text="Close" alt-input-formats="altInputFormats"
+                    show-button-bar="false" />
                 <span class="btn-primary input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="open(0)">
                         <i class="glyphicon glyphicon-calendar"></i>
@@ -91,18 +91,36 @@
     <div class="col-md-6">
         <div class="form-group">
             <label class="control-label" for="teamlead">Người phụ trách/Teamlead</label>
-            <select class="form-control" id="teamlead" ng-model="itemOrder.teamlead" ng-init="itemOrder.teamlead = peoples[0]" ng-options="p.name for p in peoples"></select>
+            <ui-select ng-model="teamlead.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                search-enabled="false">
+                <ui-select-match placeholder="Select Peoples">
+                    <span> {{$select.selected.name}}</span>
+                </ui-select-match>
+                <ui-select-choices repeat="item in peoples | filter: $select.search">
+                    <span ng-bind-html="item.name"></span>
+                </ui-select-choices>
+            </ui-select>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label class="control-label" for="converter">Converter (tùy chọn)</label>
-            <select class="form-control" id="converter" ng-model="itemOrder.converter" ng-init="itemOrder.converter = peoples[0]" ng-options="p.name for p in peoples"></select>
+            <ui-select ng-model="converter.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                search-enabled="false">
+                <ui-select-match placeholder="Select">
+                    <span> {{$select.selected.name}}</span>
+                </ui-select-match>
+                <ui-select-choices repeat="item in peoples | filter: $select.search">
+                    <span ng-bind-html="item.name"></span>
+                </ui-select-choices>
+            </ui-select>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12 text-right">
-        <a class="btn btn-info" ng-click="nextStep()">Next</a>
+        <div class="form-group">
+            <button type="button" class="btn btn-info" ng-click="nextStep()">Next</button>
+        </div>
     </div>
 </div>
