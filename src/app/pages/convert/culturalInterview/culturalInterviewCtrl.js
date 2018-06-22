@@ -11,18 +11,23 @@
     $scope.assignLabel = 'Người chấm';
 
     $scope.dt = new Date();
-    $scope.open = open;
-    $scope.opened = [false, false];
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[1];
-    $scope.options = {
-      showWeeks: false
-    };
+        $scope.open = open;
+        $scope.open1 = open1;
+        $scope.opened = false;
+        $scope.opened1 = false;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.options = {
+            showWeeks: false
+        };
 
+        function open() {
+            $scope.opened = !$scope.opened;
+        }
 
-    function open(i) {
-      $scope.opened[i] = !$scope.opened[i];
-    }
+        function open1() {
+            $scope.opened1 = !$scope.opened1;
+        }
 
     $scope.listInterview = [];
 
