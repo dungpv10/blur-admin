@@ -1,0 +1,52 @@
+<div class="st-filter clearfix">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" for="page_number">Rows on page</label>
+                    <ui-select ng-model="selectedPageSize.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                        search-enabled="false">
+                        <ui-select-match placeholder="Rows on page">
+                            <span> {{$select.selected.text}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="item in sizes | filter: $select.search">
+                            <span ng-bind-html="item.text"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" for="page_number">Your order</label>
+                    <ui-select ng-model="selectedOrder.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                        search-enabled="false">
+                        <ui-select-match placeholder="Your Order">
+                            <span> {{$select.selected.text}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="item in sizes | filter: $select.search">
+                            <span ng-bind-html="item.text"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="display_columns">Display columns</label>
+                    <ui-select ng-model="selectedDisplayColumn.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                        search-enabled="false">
+                        <ui-select-match placeholder="Source, Phone, Email, Link CV, ...">
+                            <span> {{$select.selected.text}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="item in listDisplayColumns | filter: $select.search">
+                            <span ng-bind-html="item.text"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="quick_search">Quick Search</label>
+                    <input type="text" class="form-control" id="quick_search" placeholder="Any Keyword">
+                </div>
+            </div>
+        </div>
+    </div>

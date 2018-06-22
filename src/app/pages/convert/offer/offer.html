@@ -1,67 +1,157 @@
+<div ng-include="'app/pages/convert/offer/widgets/filter.html'"></div>
 <div class="widgets">
-
-  <div class="row">
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Standard Fields"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/standardFields.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Tags Input"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/tagsInput/tagsInput.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Input Groups"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/inputGroups.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Checkboxes & Radios"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/checkboxesRadios.html'"></div>
-      </div>
-
-      <div ba-panel ba-panel-title="On/Off Switches" ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/switches/switch.html'"></div>
-      </div>
-
-      <div ba-panel ba-panel-title="Old On/Off Switches (Deprecated)" ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/oldSwitches/switch.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Datepicker"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/datePickers/datePickers.html'"></div>
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Validation States"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/validationStates.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Selects"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/select/select.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Old selects(deprecated)"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/oldSelect/select.html'"></div>
+  <div class="wid-content">
+    <div class="row">
+      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listInterview">
+        <div class="table-responsive">
+          <table class="table table-hover st-table">
+            <thead>
+              <tr class="st-row__parent">
+                <th>Ngày tìm CV</th>
+                <th>Họ và Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Link CV</th>
+                <th>Gọi điện</th>
+                <th>Gửi email</th>
+                <th>Source</th>
+                <th>TTPV.Offer-Ngày phỏng vấn</th>
+                <th>TTPV.Offer Note</th>
+                <th>TTPV.Offer Mail thông báo</th>
+                <th>TTPV.Offer Người phỏng vấn</th>
+                <th>TTPV.Offer Kết quả</th>
+                <th>TTPV.Offer File attachment</th>
+              </tr>
+              <tr class="st-row__parent">
+                <td>
+                  <div class="input-group st-calendar">
+                    <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options"
+                      ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
+                    />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchname" placeholder="Search name">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchemail" placeholder="Search email">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchtel" placeholder="Search phone number">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchlinkcv" placeholder="Search link CV">
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+                <td>
+                  <div class="input-group st-calendar">
+                    <input type="text" class="form-control" ng-change="open1()" uib-datepicker-popup="{{format}}" datepicker-options="options"
+                      ng-model="dt1" is-open="opened1" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
+                    />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+                <td>
+                  <ui-select ng-model="searchMailThongbao.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search Mail">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listSearchName | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
+                </td>
+                <td>
+                  <ui-select ng-model="searchMailThongbao.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search người phỏng vấn">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listSearchName | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
+                </td>
+                <td>
+                  <ui-select ng-model="searchResult.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Search kết quả">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listResults | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
+                </td>
+                <td>
+                  <input type="text" class="form-control" readonly>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="st-row__parent" ng-repeat="item in listInterview track by item.id">
+                <td>{{ item.searchDate }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.telephone }}</td>
+                <td>
+                  <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-info btn-block">
+                    <i class="glyphicon glyphicon-earphone">&nbsp;</i>
+                    <span>Call</span>
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-block">
+                    <i class="glyphicon glyphicon-envelope">&nbsp;</i>
+                    <span>Gửi mail</span>
+                  </button>
+                </td>
+                <td>
+                  <a href="{{ item.source }}" target="_blank">{{ item.source }}</td>
+                </td>
+                <td>{{ item.interviewDate }}</td>
+                <td>{{ item.note }}</td>
+                <td>{{ item.informer }}</td>
+                <td>{{ item.interviewer }}</td>
+                <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-block">
+                    <i class="glyphicon glyphicon-paperclip">&nbsp;</i>
+                    <span>Attach File</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <div st-pagination="" st-template="app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
