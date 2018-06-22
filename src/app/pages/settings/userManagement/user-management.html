@@ -1,44 +1,59 @@
+<div ng-include="'app/pages/settings/userManagement/widgets/filter.html'"></div>
 <div class="widgets">
-
-  <div class="row">
-    <div class="col-md-12"
-         ba-panel
-         ba-panel-title="Inline Form"
-         ba-panel-class="with-scroll">
-      <div ng-include="'app/pages/form/layouts/widgets/inlineForm.html'"></div>
+  <div class="wid-content">
+    <div class="row">
+      <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll" st-table="listUser">
+        <div class="table-responsive">
+          <table class="table table-hover st-table">
+            <thead>
+              <tr class="st-row__parent">
+                <th>Action</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>&nbsp;</th>
+              </tr>
+              <tr class="st-row__parent">
+                <td><input type="text" readonly class="form-control"> </td>
+                <td><input type="text" class="form-control" placeholder="Search username"></td>
+                <td><input type="text" class="form-control" placeholder="Search email"></td>
+                <td><input type="text" class="form-control" placeholder="Search full name"></td>
+                <td>
+                  <ui-select ng-model="searchRole.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                    search-enabled="false">
+                    <ui-select-match placeholder="Select role">
+                      <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in listRole | filter: $select.search">
+                      <span ng-bind-html="item.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
+                </td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="st-row__parent action" ng-repeat="user in listUser track by user.id">
+                <td>{{ user.status == 1 ? 'Active' : 'Lock' }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                  <button type="button" class="btn btn-info" data-toggle="modal" ng-click="openPopup('app/pages/settings/userManagement/widgets/create-popup.html', '')">
+                    <i class="ion-edit">&nbsp;</i>
+                    <span>Edit</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <div st-pagination="" st-template="app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Basic Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/basicForm.html'"></div>
-      </div>
-
-      <div
-          ba-panel
-          ba-panel-title="Horizontal Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/horizontalForm.html'"></div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div
-          ba-panel
-          ba-panel-title="Form Without Labels"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/formWithoutLabels.html'"></div>
-      </div>
-      <div
-          ba-panel
-          ba-panel-title="Block Form"
-          ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/blockForm.html'"></div>
-      </div>
-    </div>
-  </div>
-
 </div>

@@ -24,7 +24,7 @@
           .state('setting.userManagement', {
             url: '/user-management',
             templateUrl: 'app/pages/settings/userManagement/user-management.html',
-            controller: 'CreateCtrl',
+            controller: 'UserManagementCtrl',
             title: 'Người dùng',
             sidebarMeta: {
               order: 1,
@@ -35,7 +35,6 @@
             url: '/email-management',
             templateUrl: 'app/pages/settings/emailManagement/email-mangement.html',
             controller: 'EmailManagementCtrl',
-            controllerAs: 'vm',
             title: 'Email Template',
             sidebarMeta: {
               order: 2,
