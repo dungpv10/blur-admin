@@ -1,89 +1,80 @@
+<div ng-include="'app/pages/contact/ranking/widgets/filter.html'"></div>
 <div class="widgets">
-    <div ng-include="'app/pages/teamlead/assignConvert/widgets/filter.html'"></div>
+  <div class="wid-content">
     <div class="row">
-        <div class="col-md-12" ba-panel ba-panel-title="Editable Rows" ba-panel-class="with-scroll">
-            <table class="table table-hover" st-table="listAssignPeople">
-                <thead>
-                    <tr>
-                        <th>Action</th>
-                        <th>Order code</th>
-                        <th>Order name</th>
-                        <th>Teamlead</th>
-                        <th>KPI</th>
-                        <th>Deadline</th>
-                        <th>Converter</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" id="checkAll" value="">
-                                <span>&nbsp;</span>
-                            </label>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search Summary</option>
-                                <option value="code">Code 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search Order name</option>
-                                <option value="name">Name 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Teamlead</option>
-                                <option value="001">huongtt25</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search KPI</option>
-                                <option value="001">kpi 001</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>dd/MM/yy</option>
-                                <option value="001">19/06/2018</option>
-                                <option value="001">20/06/2018</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control">
-                                <option>Search người đề xuất</option>
-                                <option value="001">phuongnt15</option>
-                                <option value="001">phuongnt15</option>
-                            </select>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in listAssignPeople track by item.id">
-                        <td>
-                            <label class="custom-checkbox">
-                                <input type="checkbox" id="chk_{{ item.id }}" value="">
-                                <span>&nbsp;</span>
-                            </label>
-                        </td>
-                        <td>{{ item.fullName }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>
-                            <a href="{{ item.linkCV }}" target="_blank">{{ item.linkCV }}</td>
-                        </td>
-                        <td>{{ item.status == 0 ? 'New' : 'Complete' }}</td>
-                        <td>{{ item.result == 1 ? 'Pass' : 'Pending' }}</td>
-                        <td>{{ item.proposer }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="7" class="text-center">
-                            <div st-pagination="" st-items-by-page="selectedPageSize" st-displayed-pages="5"></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+      <div class="col-md-12" ba-panel ba-panel-class="with-scroll" st-table="listRanking">
+        <div class="table-responsive">
+          <table class="table table-hover st-table">
+            <thead>
+              <tr class="st-row__parent">
+                <th>Ngày tìm CV</th>
+                <th>Họ và Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Link CV</th>
+                <th>Source</th>
+                <th>TTPV.Ranking.Note</th>
+                <th>TTPV.Ranking.ThuHang</th>
+                <th>TTPV.Ranking.KetQua</th>
+              </tr>
+              <tr class="st-row__parent">
+                <td>
+                  <div class="input-group st-calendar">
+                    <input type="text" class="form-control" ng-change="open()" uib-datepicker-popup="{{format}}" datepicker-options="options"
+                      ng-model="dt" is-open="opened" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false"
+                    />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchname" placeholder="Search name">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchemail" placeholder="Search email">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchtel" placeholder="Search phone number">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchlinkcv" placeholder="Search link CV">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="txt_searchsource" placeholder="Search source">
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="st-row__parent"  ng-repeat="item in listRanking track by item.id">
+                <td>{{ item.searchDate }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.telephone }}</td>
+                <td>{{ item.linkCV }}</td>
+                <td>{{ item.source }}</td>
+                <td>{{ item.note }}</td>
+                <td>{{ item.rank }}</td>
+                <td>{{ item.result }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <div class="text-center">
+          <div st-pagination="" st-template="app/pages/common/pagination.html" st-items-by-page="selectedPageSize.selected.value" st-displayed-pages="5"></div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
