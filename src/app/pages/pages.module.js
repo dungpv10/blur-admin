@@ -22,6 +22,7 @@
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
+    'ui.tinymce'
   ])
       .config(routeConfig);
 

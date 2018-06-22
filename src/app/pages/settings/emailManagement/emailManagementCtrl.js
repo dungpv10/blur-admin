@@ -1,11 +1,11 @@
 (function () {
     'use strict';
-  
+
     angular.module('BlurAdmin.pages.setting')
         .controller('EmailManagementCtrl', EmailManagementCtrl);
-  
+
     /** @ngInject */
-    function EmailManagementCtrl($scope,$uibModal, teamleadService) {
+    function EmailManagementCtrl($scope, $uibModal, teamleadService) {
         $scope.selectedPageSize = {};
         $scope.pageSize = 5;
         $scope.assignLabel = 'Người chấm';
@@ -13,13 +13,13 @@
         $scope.listEmailTemplate = [];
 
         for (var i = 0; i < 28; ++i) {
-          $scope.listEmailTemplate.push({
-            stt: i,
-            donHang: 'FCA',
-            templateName: 'FCA_MoiUngTuyen'
-          });
+            $scope.listEmailTemplate.push({
+                stt: i,
+                donHang: 'FCA',
+                templateName: 'FCA_MoiUngTuyen'
+            });
         }
-    
+
         $scope.sizes = teamleadService.getListPageSize();
         $scope.listDisplayColumns = teamleadService.getListDisplayColumns();
         $scope.listFullname = teamleadService.getListFullname();
@@ -53,8 +53,26 @@
                 }
             });
         };
-      }
-  
-  })();
-  
-  
+
+        $scope.tinymceModel = 'Initial content';
+
+        $scope.getContent = function () {
+            console.log('Editor content:', $scope.tinymceModel);
+        };
+
+        $scope.setContent = function () {
+            $scope.tinymceModel = 'Time: ' + (new Date());
+        };
+
+        $scope.tinymceOptions = {
+            plugins: 'link image code',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+        };
+
+        $scope.deleteTemplate = function(index) {
+            $scope.listEmailTemplate.splice(index, 1);
+        };
+    }
+
+})();
+
