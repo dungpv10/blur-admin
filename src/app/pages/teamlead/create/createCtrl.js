@@ -6,7 +6,10 @@
 
     /** @ngInject */
     function CreateCtrl($scope, $uibModal) {
-        //$scope.itemOrder = {};
+        $scope.itemOrder = {
+            endDate: new Date(),
+            orderDate: new Date()
+        };
         $scope.activeTab = 0;
 
         $scope.stepOptions = [];
@@ -35,10 +38,6 @@
         };
 
         $scope.peoples = [
-            {
-                id: 0,
-                name: 'Select'
-            },
             {
                 id: 1,
                 name: 'hoangnt15'
