@@ -272,6 +272,21 @@ a {
               min-width: auto;
               max-width: auto;
             }
+
+            > td {
+              label {
+                &.custom-checkbox {
+                  color: $primary;
+
+                  > span {
+                    &:before {
+                      background-color: $primary;
+                      color: #fff;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -343,6 +358,10 @@ a {
 .st-form {
   label.control-label {
     font-weight: 600;
+  }
+
+  .color-white {
+    color: #fff !important;
   }
 }
 

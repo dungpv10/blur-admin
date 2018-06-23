@@ -15,10 +15,17 @@
                 <th>&nbsp;</th>
               </tr>
               <tr class="st-row__parent">
-                <td><input type="text" readonly class="form-control"> </td>
-                <td><input type="text" class="form-control" placeholder="Search username"></td>
-                <td><input type="text" class="form-control" placeholder="Search email"></td>
-                <td><input type="text" class="form-control" placeholder="Search full name"></td>
+                <td>
+                  <input type="text" readonly class="form-control"> </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Search username">
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Search email">
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Search full name">
+                </td>
                 <td>
                   <ui-select ng-model="searchRole.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
                     search-enabled="false">
@@ -35,7 +42,12 @@
             </thead>
             <tbody>
               <tr class="st-row__parent action" ng-repeat="user in listUser track by user.id">
-                <td>{{ user.status == 1 ? 'Active' : 'Lock' }}</td>
+                <td>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="chk_{{ item.id }}" ng-checked="user.status == 1 ? true : false" value="">
+                    <span>{{ user.status == 1 ? 'Active' : 'Lock' }}</span>
+                  </label>
+                </td>
                 <td>{{ user.userName }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.fullName }}</td>
